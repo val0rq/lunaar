@@ -1,4 +1,16 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabricmc.net/' }
+        gradlePluginPortal()
+    }
+    dependencies {
+        classpath "net.fabricmc:fabric-loom:1.14.0"
+    }
+}
 
+apply plugin: "fabric-loom"
+apply plugin: "maven-publish"
+apply plugin: "base"
 
 version = project.mod_version
 group = project.mod_group
@@ -33,5 +45,4 @@ java {
     withSourcesJar()
     sourceCompatibility = JavaVersion.VERSION_21
     targetCompatibility = JavaVersion.VERSION_21
-
 }
